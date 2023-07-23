@@ -6,6 +6,7 @@ window.addEventListener('load', ()=>{
     let tempDegree = document.querySelector("#tempDegree");
     let unit = document.querySelector("#unit");
 
+    var secretKey = config.SECRET_KEY;
 
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position  =>{
@@ -14,7 +15,9 @@ window.addEventListener('load', ()=>{
         lat = position.coords.latitude;
         
         // Api
-      const api = `http://api.weatherapi.com/v1/current.json?key=2c1e1615efc54dbf9cb152609231403&q= ${lat},${long}&aqi=no`
+        // const api = `http://api.weatherapi.com/v1/current.json?key=' + 2c1e1615efc54dbf9cb152609231403&q + '= ${lat},${long}&aqi=no`
+
+      const api = `http://api.weatherapi.com/v1/current.json?key=${secretKey}= ${lat},${long}&aqi=no`
       
       fetch(api)
          .then(response =>{
