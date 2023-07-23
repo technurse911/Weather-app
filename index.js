@@ -17,8 +17,8 @@ window.addEventListener('load', ()=>{
         // Api
         // const api = `http://api.weatherapi.com/v1/current.json?key=' + 2c1e1615efc54dbf9cb152609231403&q + '= ${lat},${long}&aqi=no`
 
-      const api = `http://api.weatherapi.com/v1/current.json?key=${secretKey}= ${lat},${long}&aqi=no`
-          console.log (${secretKey})
+      const api = `http://api.weatherapi.com/v1/current.json?key=${secretKey}=${lat},${long}&aqi=no`
+          console.log (secretKey)
       
       fetch(api)
          .then(response =>{
